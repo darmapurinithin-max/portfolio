@@ -52,15 +52,24 @@ section{padding:88px 24px}.container{max-width:1120px;margin:0 auto}
 .tags{display:flex;flex-wrap:wrap;gap:6px}.tags span{font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;background:#F8FAFC;border:1px solid var(--line)}
 .p-foot{padding:16px 22px;border-top:1px solid var(--line);display:flex;justify-content:space-between}.plink{width:40px;height:40px;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;background:#fff}
 .edu{display:grid;grid-template-columns:140px 1fr;gap:24px;margin-top:40px;padding:32px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}.cgpa{margin-top:12px;display:inline-flex;gap:8px;background:var(--ink);color:#fff;padding:8px 14px;border-radius:100px;font-weight:800;font-size:13px}
+/* === NEW DELLOITE CERTIFICATION STYLES (ONLY ADDITION) === */
+.exp-card{margin-top:32px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow);display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:start}
+.exp-logo{width:64px;height:64px;border-radius:16px;background:#000;display:grid;place-items:center;color:#fff;font-weight:800;font-size:22px}
+.exp-title{font-family:'Space Grotesk';font-size:20px;font-weight:700}
+.exp-company{font-size:14px;color:var(--ink2);font-weight:600;margin-top:4px}
+.exp-bullets{margin-top:12px;display:grid;gap:8px}
+.exp-bullets li{font-size:14px;color:var(--ink2);line-height:1.5;list-style:none;display:flex;gap:8px}
+.exp-bullets li::before{content:"•";color:#2563EB;font-weight:800}
+.verified{margin-top:10px;padding:6px 12px;border-radius:100px;background:#DCFCE7;color:#166534;font-size:11px;font-weight:800;display:inline-flex;gap:6px;align-items:center;width:fit-content}
+.exp-action{display:flex;flex-direction:column;gap:10px;align-items:center}
 footer{padding:80px 24px 32px;background:#fff;border-top:1px solid var(--line);margin-top:40px}.foot{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr;gap:40px}.foot h3{font-family:'Space Grotesk';font-size:32px}
 .slink{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:#F8FAFC;font-weight:600;font-size:14px}
-@media(max-width:1024px){body{cursor:auto}.cursor{display:none}.hero-inner{grid-template-columns:1fr}.card-wrap{order:-1}.profile-card{width:100%;max-width:380px}.big-name{white-space:normal!important}.bento-item{grid-column:span 12!important}.pcard{grid-column:span 12!important}.pcard:nth-child(3){grid-template-columns:1fr}.foot{grid-template-columns:1fr}.links{display:none}}
+@media(max-width:1024px){body{cursor:auto}.cursor{display:none}.hero-inner{grid-template-columns:1fr}.card-wrap{order:-1}.profile-card{width:100%;max-width:380px}.big-name{white-space:normal!important}.bento-item{grid-column:span 12!important}.pcard{grid-column:span 12!important}.pcard:nth-child(3){grid-template-columns:1fr}.foot{grid-template-columns:1fr}.links{display:none}.exp-card{grid-template-columns:1fr}.exp-action{flex-direction:row;align-items:flex-start}}
 </style>
 </head>
 <body>
 <div class="cursor" id="cursor"></div><div class="progress" id="progress"></div>
 
-<!-- FIXED NAVBAR: Tools | Education | Projects | Contact -->
 <nav>
   <div class="logo"><div class="logo-icon">N</div> NITHIN DHARMAPURI</div>
   <div class="links">
@@ -69,7 +78,7 @@ footer{padding:80px 24px 32px;background:#fff;border-top:1px solid var(--line);m
     <a href="#about">Education</a>
     <a href="#contact">Contact</a>
   </div>
-  <a class="nav-cta" href="https://drive.google.com/file/d/1ghQfmM77TrkJArkSo3sJ4lpNosm_PUX0/view?usp=drive_link" target="_blank">Resume ↗</a>
+  <a class="nav-cta" href="https://drive.google.com/file/d/1ghQfmM77TrkJArkSo3sJ4lpNosm_PUX0/view?usp=drive_link" target="_blank">Resume ↗️</a>
 </nav>
 
 <div class="hero">
@@ -109,21 +118,46 @@ footer{padding:80px 24px 32px;background:#fff;border-top:1px solid var(--line);m
 </div></div></section>
 
 <section id="work" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="container"><div class="kicker reveal">Projects</div><h2 class="title reveal">Data-driven projects</h2><div class="projects">
-<div class="pcard reveal"><div class="p-img"><span class="pill">⭐ Featured</span><img src="project1.png" alt="Smart Trip Planner"></div><div class="p-body"><h3>Smart Trip Planner</h3><p>Analyzed travel data to simplify route selection & cost estimation.</p><div class="tags"><span>Python</span><span>Flask</span></div></div><div class="p-foot"><div style="font-size:13px;font-weight:700">Reduced planning time by 70%</div><div><a class="plink" href="https://github.com/darmapurinithin-max/smart-trip-planner" target="_blank">↗</a></div></div></div>
-<div class="pcard reveal"><div class="p-img"><span class="pill">React + MySQL</span><img src="project2.png" alt="Study Smart"></div><div class="p-body"><h3>Study Smart</h3><p>Analytics dashboard to track study KPIs & progress.</p><div class="tags"><span>MySQL</span><span>React</span></div></div><div class="p-foot"><div style="font-size:13px;font-weight:700">62% Progress Tracked</div><div><a class="plink" href="https://github.com/darmapurinithin-max/StudySmart" target="_blank">↗</a></div></div></div>
-<div class="pcard reveal"><div class="p-img"><span class="pill">Python • Analysis</span><img src="project3.png" alt="Price Comparison"></div><div class="p-body"><h3>Price Comparison — Data Project</h3><p>Built price intelligence engine with Pandas, cleaning & trend analysis. Saves users 12%.</p><div class="tags"><span>Python</span><span>Pandas</span><span>Web Scraping</span></div><div style="margin-top:20px;display:flex;gap:10px"><a class="btn btn-black" href="https://github.com/darmapurinithin-max" target="_blank">View Code ↗</a></div></div></div>
+<div class="pcard reveal"><div class="p-img"><span class="pill">⭐ Featured</span><img src="project1.png" alt="Smart Trip Planner"></div><div class="p-body"><h3>Smart Trip Planner</h3><p>Analyzed travel data to simplify route selection & cost estimation.</p><div class="tags"><span>Python</span><span>Flask</span></div></div><div class="p-foot"><div style="font-size:13px;font-weight:700">Reduced planning time by 70%</div><div><a class="plink" href="https://github.com/darmapurinithin-max/smart-trip-planner" target="_blank">↗️</a></div></div></div>
+<div class="pcard reveal"><div class="p-img"><span class="pill">React + MySQL</span><img src="project2.png" alt="Study Smart"></div><div class="p-body"><h3>Study Smart</h3><p>Analytics dashboard to track study KPIs & progress.</p><div class="tags"><span>MySQL</span><span>React</span></div></div><div class="p-foot"><div style="font-size:13px;font-weight:700">62% Progress Tracked</div><div><a class="plink" href="https://github.com/darmapurinithin-max/StudySmart" target="_blank">↗️</a></div></div></div>
+<div class="pcard reveal"><div class="p-img"><span class="pill">Python • Analysis</span><img src="project3.png" alt="Price Comparison"></div><div class="p-body"><h3>Price Comparison — Data Project</h3><p>Built price intelligence engine with Pandas, cleaning & trend analysis. Saves users 12%.</p><div class="tags"><span>Python</span><span>Pandas</span><span>Web Scraping</span></div><div style="margin-top:20px;display:flex;gap:10px"><a class="btn btn-black" href="https://github.com/darmapurinithin-max" target="_blank">View Code ↗️</a></div></div></div>
 </div></div></section>
 
-<section id="about"><div class="container"><div class="kicker reveal">Education</div><h2 class="title reveal">Academic background</h2><div class="edu reveal"><div style="font-weight:700;color:var(--muted)">2023 → 2027</div><div><h3>Bachelor of Technology in Data Science</h3><p style="color:#475569">DRK Institute of Science and Technology, JNTUH — Hyderabad</p><div class="cgpa">🎓 CGPA 8.05 / 10 • Data Analyst</div></div></div></div></section>
+<section id="about"><div class="container"><div class="kicker reveal">Education</div><h2 class="title reveal">Academic background</h2><div class="edu reveal"><div style="font-weight:700;color:var(--muted)">2023 → 2027</div><div><h3>Bachelor of Technology in Data Science</h3><p style="color:#475569">DRK Institute of Science and Technology, JNTUH — Hyderabad</p><div class="cgpa">🎓 CGPA 8.05 / 10 • Data Analyst</div></div></div>
 
-<footer id="contact"><div class="foot"><div><h3>Let's turn<br><span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent">data into impact.</span></h3><p style="color:#64748B;margin-top:12px;max-width:420px">Open to Data Analyst roles.</p></div><div><div style="display:grid;gap:10px"><a class="slink" href="mailto:nithindharmapuri1@gmail.com">📧 nithindharmapuri1@gmail.com <span style="margin-left:auto">↗</span></a><a class="slink" href="tel:+919704884140">📞 +91 97048 84140 <span style="margin-left:auto">↗</span></a><a class="slink" href="https://linkedin.com/in/dharmapuri-nithin-7112872b7" target="_blank">🔗 LinkedIn <span style="margin-left:auto">↗</span></a><a class="slink" href="https://github.com/darmapurinithin-max" target="_blank">💻 GitHub <span style="margin-left:auto">↗</span></a></div><a href="https://drive.google.com/file/d/1ghQfmM77TrkJArkSo3sJ4lpNosm_PUX0/view?usp=drive_link" target="_blank" class="btn btn-black" style="width:100%;justify-content:center;margin-top:16px">Download Resume ↓</a></div></div><div style="max-width:1120px;margin:48px auto 0;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:12px;color:var(--muted)"><span>© 2026 Nithin Dharmapuri • Data Analyst</span><span>SQL • Python • Power BI • Tableau</span></div></footer>
+<!-- === NEW DELLOITE SECTION ADDED HERE (KEEPS YOUR OLD DESIGN) === -->
+<div class="kicker reveal" style="margin-top:56px">Certification & Virtual Experience</div>
+<h2 class="title reveal" style="font-size:32px">Professional Experience</h2>
+<div class="exp-card reveal">
+  <div class="exp-logo">D</div>
+  <div>
+    <div class="exp-title">Data Analytics Job Simulation</div>
+    <div class="exp-company">Deloitte Australia • Forage • 2025</div>
+    <span class="verified">✓ VERIFIED CERTIFICATE</span>
+    <ul class="exp-bullets">
+      <li>Completed a Deloitte job simulation involving data analysis and forensic technology</li>
+      <li>Created a data dashboard using Tableau to visualize key business insights</li>
+      <li>Used Excel to classify data and draw meaningful business conclusions</li>
+    </ul>
+    <div class="chips" style="margin-top:14px"><span class="chip hot">Tableau</span><span class="chip hot">Excel</span><span class="chip">Data Analysis</span><span class="chip">Forensic Tech</span></div>
+  </div>
+  <div class="exp-action">
+    <a href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_6ab4bd7566e2527b810871e9_1790239205064_completion_certificate.pdf" target="_blank" class="btn btn-black" style="white-space:nowrap">View Certificate ↗️</a>
+    <span style="font-size:11px;color:var(--muted)">Issued by Forage</span>
+  </div>
+</div>
+<!-- === END NEW SECTION === -->
+
+</div></section>
+
+<footer id="contact"><div class="foot"><div><h3>Let's turn<br><span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent">data into impact.</span></h3><p style="color:#64748B;margin-top:12px;max-width:420px">Open to Data Analyst roles • Deloitte Certified</p></div><div><div style="display:grid;gap:10px"><a class="slink" href="mailto:nithindharmapuri1@gmail.com">📧 nithindharmapuri1@gmail.com <span style="margin-left:auto">↗️</span></a><a class="slink" href="tel:+919704884140">📞 +91 97048 84140 <span style="margin-left:auto">↗️</span></a><a class="slink" href="https://linkedin.com/in/dharmapuri-nithin-7112872b7" target="_blank">🔗 LinkedIn <span style="margin-left:auto">↗️</span></a><a class="slink" href="https://github.com/darmapurinithin-max" target="_blank">💻 GitHub <span style="margin-left:auto">↗️</span></a></div><a href="https://drive.google.com/file/d/1ghQfmM77TrkJArkSo3sJ4lpNosm_PUX0/view?usp=drive_link" target="_blank" class="btn btn-black" style="width:100%;justify-content:center;margin-top:16px">Download Resume ↓</a></div></div><div style="max-width:1120px;margin:48px auto 0;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:12px;color:var(--muted)"><span>©️ 2026 Nithin Dharmapuri • Data Analyst • Deloitte Certified</span><span>SQL • Python • Power BI • Tableau</span></div></footer>
 
 <script>
 const cursor=document.getElementById('cursor'), progress=document.getElementById('progress');
 let mx=0,my=0,cx=0,cy=0;window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
 (function loop(){cx+=(mx-cx)*0.18;cy+=(my-cy)*0.18;cursor.style.left=cx-10+'px';cursor.style.top=cy-10+'px';requestAnimationFrame(loop)})();
 window.addEventListener('scroll',()=>{progress.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%'});
-document.querySelectorAll('a,.btn,.pcard,.chip').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'))});
+document.querySelectorAll('a,.btn,.pcard,.chip,.exp-card').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'))});
 function magnetic(id){const b=document.getElementById(id);if(!b)return;b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();const x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;b.style.transform=`translate(${x*0.25}px,${y*0.35}px)`});b.addEventListener('mouseleave',()=>{b.style.transform='translate(0,0)'})}
 magnetic('mag1');magnetic('mag2');
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));

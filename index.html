@@ -20,27 +20,27 @@ nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 90%,
 .nav-center a:hover{color:var(--ink)}
 .nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .theme,.menu-btn{width:36px;height:36px;border:1px solid var(--line);border-radius:100px;background:var(--card);display:grid;place-items:center;cursor:pointer;font-size:16px}
-.resume-btn{font-size:13px;font-weight:600;padding:9px 16px;border-radius:100px;background:var(--ink);color:var(--bg);border:1px solid var(--ink)}
 .menu-btn{display:none}
-.mobile-menu{position:fixed;top:61px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:16px 24px;display:none;flex-direction:column;gap:12px;z-index:49}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-size:15px;font-weight:500;padding:10px 0;border-bottom:1px solid var(--line)}
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:49;display:none}
+.mobile-overlay.open{display:block}
+.mobile-menu{position:fixed;top:0;right:-100%;width:280px;height:100%;background:var(--bg);border-left:1px solid var(--line);padding:72px 24px 24px;display:flex;flex-direction:column;gap:6px;z-index:50;transition:right .3s ease}
+.mobile-menu.open{right:0}
+.mobile-menu a{font-size:15px;font-weight:500;padding:14px 0;border-bottom:1px solid var(--line)}
 .mobile-menu a:last-child{border:none}
-
-/* HERO LIKE RAVI KUMAR - LEFT TEXT RIGHT PHOTO */
-header{padding:56px 0 32px}
 .hero{display:flex;justify-content:space-between;align-items:center;gap:48px}
 .hero-left{flex:1}
 .hero-right{flex-shrink:0}
-.avatar{width:220px;height:220px;border-radius:100px;object-fit:cover;border:1px solid var(--line);background:var(--bg-soft);display:block}
-.fallback{width:220px;height:220px;border-radius:100px;display:none;place-items:center;background:var(--ink);color:var(--bg);font-family:'Fraunces';font-weight:600;font-size:56px}
+.avatar{width:220px;height:220px;border-radius:50%;object-fit:cover;border:1px solid var(--line);background:var(--bg-soft);display:block}
+.fallback{width:220px;height:220px;border-radius:50%;display:none;place-items:center;background:var(--ink);color:var(--bg);font-family:'Fraunces';font-weight:600;font-size:56px}
 .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);font-weight:600}
 h1{font-family:'Fraunces';font-size:48px;line-height:.92;letter-spacing:-.04em;font-weight:600;margin:14px 0 12px;color:var(--ink)}
 h1 em{font-style:normal;color:var(--ink2);font-weight:500;font-size:26px;display:block;margin-top:8px}
 .sub{font-size:16px;color:var(--ink);opacity:.65;max-width:520px;line-height:1.65}
 .meta-row{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
 .meta-pill{font-size:12px;padding:6px 12px;border-radius:100px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-weight:500}
-
+.hero-btns{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+.btn-primary{font-size:13px;font-weight:600;padding:10px 18px;border-radius:100px;background:var(--ink);color:var(--bg);border:1px solid var(--ink)}
+.btn-secondary{font-size:13px;font-weight:600;padding:10px 18px;border-radius:100px;background:var(--card);color:var(--ink);border:1px solid var(--line)}
 section{padding:40px 0;border-top:1px solid var(--line);scroll-margin-top:70px}
 .sec-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
 .sec-title{font-family:'Fraunces';font-size:22px;font-weight:600}.sec-num{font-size:12px;color:var(--ink2)}
@@ -65,19 +65,30 @@ section{padding:40px 0;border-top:1px solid var(--line);scroll-margin-top:70px}
 .cert ul{margin-top:10px;padding-left:14px}.cert li{font-size:13px;color:var(--ink);opacity:.7;margin-bottom:4px}
 .c-row{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border:1px solid var(--line);background:var(--card);border-radius:12px;font-size:14px;font-weight:500}
 .c-row span:last-child{opacity:.6;font-weight:400}
-footer{padding:32px 0 48px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:12px;color:var(--ink2)}
+footer{padding:32px 0 48px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink2)}
+.back-top{font-size:12px;font-weight:600;padding:8px 14px;border-radius:100px;border:1px solid var(--line);background:var(--card);cursor:pointer}
+
+/* DESKTOP - space fix */
+header{padding:80px 0 32px}
 
 @media(max-width:900px){
 .nav-center{display:none}
 .menu-btn{display:grid}
-.hero{flex-direction:column;align-items:flex-start}
-.hero-right{order:-1}
-.avatar,.fallback{width:128px;height:128px}
-h1{font-size:34px}
-.skills{grid-template-columns:1fr}
-.edu{flex-direction:column}
+header{padding:36px 0 28px}
+.hero{flex-direction:column;align-items:center;gap:28px;text-align:center}
+.hero-left{width:100%}
+.hero-right{order:-1;width:100%;display:grid;place-items:center}
+.avatar,.fallback{width:280px;height:280px;border-radius:50%}
+.eyebrow{text-align:center}
+h1{font-size:32px;text-align:center}
+h1 em{font-size:22px}
+.sub{margin-left:auto;margin-right:auto;text-align:center}
+.meta-row{justify-content:center}
+.hero-btns{justify-content:center}
 .wrap{max-width:720px}
 .nav-inner{max-width:720px}
+.skills{grid-template-columns:1fr}
+.edu{flex-direction:column}
 }
 </style>
 </head>
@@ -95,11 +106,11 @@ h1{font-size:34px}
   </div>
   <div class="nav-right">
     <button class="theme" id="themeBtn">☽</button>
-    <a class="resume-btn" href="https://drive.google.com/file/d/11U5Sd3GwPlh9oG2z4Hi0I-R3WT_Vu3xS/view?usp=drive_link" target="_blank">Resume ↗</a>
     <button class="menu-btn" id="menuBtn">☰</button>
   </div>
 </div>
 </nav>
+<div class="mobile-overlay" id="overlay" onclick="closeMenu()"></div>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" onclick="closeMenu()">About</a>
   <a href="#education" onclick="closeMenu()">Education</a>
@@ -108,7 +119,6 @@ h1{font-size:34px}
   <a href="#cert" onclick="closeMenu()">Certifications</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
-
 <div class="wrap">
 <header id="about">
   <div class="hero">
@@ -117,6 +127,10 @@ h1{font-size:34px}
       <h1>Data Analyst <em>Turning Data into clear Business decisions</em></h1>
       <p class="sub">Final year B.Tech Data Science at DRKIST, JNTUH. I work with Python, SQL, Power BI and Tableau to clean, analyze and visualize data for business impact.</p>
       <div class="meta-row"><span class="meta-pill">SQL • Python</span><span class="meta-pill">Power BI • Tableau</span><span class="meta-pill">CGPA 8.05 / 10</span></div>
+      <div class="hero-btns">
+        <a class="btn-primary" href="https://drive.google.com/file/d/11U5Sd3GwPlh9oG2z4Hi0I-R3WT_Vu3xS/view?usp=drive_link" target="_blank">Resume ↗</a>
+        <a class="btn-secondary" href="#contact">Connect ↓</a>
+      </div>
     </div>
     <div class="hero-right">
       <img src="profile.png" class="avatar" id="avatar" onerror="this.style.display='none';document.getElementById('fb').style.display='grid'">
@@ -124,10 +138,8 @@ h1{font-size:34px}
     </div>
   </div>
 </header>
-
 <section id="education"><div class="sec-head"><div class="sec-title">Education</div><div class="sec-num">01</div></div>
 <div class="edu"><div><small>2023 - 2027</small><h3>B.Tech in Data Science</h3><p>DRK Institute of Science and Technology, JNTUH, Hyderabad</p></div><div class="cgpa">CGPA 8.05</div></div></section>
-
 <section id="skills"><div class="sec-head"><div class="sec-title">Skills</div><div class="sec-num">02</div></div>
 <div class="skills">
 <div class="skill-box"><h4>Data Analysis</h4><div class="skill-list"><span>SQL</span><span>Python</span><span>Pandas</span><span>Excel</span><span>EDA</span></div></div>
@@ -135,17 +147,14 @@ h1{font-size:34px}
 <div class="skill-box"><h4>Tools</h4><div class="skill-list"><span>MySQL</span><span>Git / GitHub</span><span>VS Code</span></div></div>
 <div class="skill-box"><h4>Fundamentals</h4><div class="skill-list"><span>Statistics</span><span>Scikit-learn</span><span>AWS Basics</span></div></div>
 </div></section>
-
 <section id="projects"><div class="sec-head"><div class="sec-title">Projects</div><div class="sec-num">03</div></div>
 <div class="projects">
 <a class="proj" href="https://smart-trip-planner-qta3.onrender.com" target="_blank"><div><h3>Smart Trip Planner</h3><p>Travel dataset analysis to simplify route & cost estimation.</p><div class="tags"><span>Python</span><span>Flask</span></div></div><div class="arrow">↗</div></a>
 <a class="proj" href="https://darmapurinithin-max.github.io/StudySmart/" target="_blank"><div><h3>Study Smart</h3><p>Dashboard to track study KPIs built with React + MySQL.</p><div class="tags"><span>React</span><span>MySQL</span></div></div><div class="arrow">↗</div></a>
 <a class="proj" href="https://github.com/darmapurinithin-max" target="_blank"><div><h3>Price Comparison</h3><p>Price intelligence with Pandas, cleaning and trend analysis.</p><div class="tags"><span>Python</span><span>Web Scraping</span></div></div><div class="arrow">↗</div></a>
 </div></section>
-
 <section id="cert"><div class="sec-head"><div class="sec-title">Certification</div><div class="sec-num">04</div></div>
 <div class="cert"><div class="cert-logo">D</div><div><h3>Deloitte - Data Analytics Job Simulation</h3><small>Deloitte Australia • Forage • 2026 • <a href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_6ab4bd7566e2527b810871e9_1790239205064_completion_certificate.pdf" target="_blank" style="text-decoration:underline">View Certificate ↗</a></small><ul><li>Created Tableau dashboard for business insights</li><li>Classified data using Excel</li></ul></div></div></section>
-
 <section id="contact"><div class="sec-head"><div class="sec-title">Contact</div><div class="sec-num">05</div></div>
 <div class="contact">
 <a class="c-row" href="tel:+919704884140"><span>Phone</span><span>+91 97048 84140 ↗</span></a>
@@ -154,9 +163,8 @@ h1{font-size:34px}
 <a class="c-row" href="https://github.com/darmapurinithin-max" target="_blank"><span>GitHub</span><span>github.com ↗</span></a>
 <div class="c-row"><span>Location</span><span>Hyderabad, India</span></div>
 </div></section>
-<footer><span>© 2026 Nithin Dharmapuri</span><span>Data Analyst</span></footer>
+<footer><span>© 2026 Nithin Dharmapuri • Data Analyst</span><button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button></footer>
 </div>
-
 <script>
 const btn=document.getElementById('themeBtn');
 const saved=localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -171,8 +179,17 @@ btn.onclick=()=>{
 }
 const menuBtn=document.getElementById('menuBtn');
 const mobileMenu=document.getElementById('mobileMenu');
-menuBtn.onclick=()=>{mobileMenu.classList.toggle('open'); menuBtn.textContent=mobileMenu.classList.contains('open')?'✕':'☰';}
-function closeMenu(){mobileMenu.classList.remove('open'); menuBtn.textContent='☰';}
+const overlay=document.getElementById('overlay');
+menuBtn.onclick=()=>{
+  const open=mobileMenu.classList.toggle('open');
+  overlay.classList.toggle('open',open);
+  menuBtn.textContent=open?'✕':'☰';
+}
+function closeMenu(){
+  mobileMenu.classList.remove('open');
+  overlay.classList.remove('open');
+  menuBtn.textContent='☰';
+}
 </script>
 </body>
 </html>

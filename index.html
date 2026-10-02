@@ -9,27 +9,38 @@
 [data-theme="dark"]{--bg:#0A0A0A;--bg-soft:#141414;--ink:#FFFFFF;--ink2:#9A9A9A;--line:#222222;--card:#141414}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
-a{color:inherit;text-decoration:none}.wrap{max-width:720px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-inner{max-width:840px;margin:0 auto;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+a{color:inherit;text-decoration:none}.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 90%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
 .logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .nd{width:32px;height:32px;border-radius:8px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-family:'JetBrains Mono';font-size:13px;font-weight:600}
 .logo-text{font-family:'Fraunces';font-size:16px;font-weight:600;letter-spacing:-.02em}
 .nav-center{display:flex;gap:20px;align-items:center}
 .nav-center a{font-size:13px;font-weight:500;color:var(--ink2);transition:.15s}
 .nav-center a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.theme{width:36px;height:36px;border:1px solid var(--line);border-radius:100px;background:var(--card);display:grid;place-items:center;cursor:pointer;font-size:16px}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.theme,.menu-btn{width:36px;height:36px;border:1px solid var(--line);border-radius:100px;background:var(--card);display:grid;place-items:center;cursor:pointer;font-size:16px}
 .resume-btn{font-size:13px;font-weight:600;padding:9px 16px;border-radius:100px;background:var(--ink);color:var(--bg);border:1px solid var(--ink)}
-header{padding:56px 0 32px}.top{display:flex;gap:28px;align-items:center;margin-bottom:8px}
-.avatar{width:128px;height:128px;border-radius:100px;object-fit:cover;border:1px solid var(--line);background:var(--bg-soft);display:block}
-.fallback{width:128px;height:128px;border-radius:100px;display:none;place-items:center;background:var(--ink);color:var(--bg);font-family:'Fraunces';font-weight:600;font-size:42px}
+.menu-btn{display:none}
+.mobile-menu{position:fixed;top:61px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:16px 24px;display:none;flex-direction:column;gap:12px;z-index:49}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:500;padding:10px 0;border-bottom:1px solid var(--line)}
+.mobile-menu a:last-child{border:none}
+
+/* HERO LIKE RAVI KUMAR - LEFT TEXT RIGHT PHOTO */
+header{padding:56px 0 32px}
+.hero{display:flex;justify-content:space-between;align-items:center;gap:48px}
+.hero-left{flex:1}
+.hero-right{flex-shrink:0}
+.avatar{width:220px;height:220px;border-radius:100px;object-fit:cover;border:1px solid var(--line);background:var(--bg-soft);display:block}
+.fallback{width:220px;height:220px;border-radius:100px;display:none;place-items:center;background:var(--ink);color:var(--bg);font-family:'Fraunces';font-weight:600;font-size:56px}
 .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);font-weight:600}
-h1{font-family:'Fraunces';font-size:42px;line-height:.92;letter-spacing:-.04em;font-weight:600;margin:14px 0 12px;color:var(--ink)}
+h1{font-family:'Fraunces';font-size:48px;line-height:.92;letter-spacing:-.04em;font-weight:600;margin:14px 0 12px;color:var(--ink)}
 h1 em{font-style:normal;color:var(--ink2);font-weight:500;font-size:26px;display:block;margin-top:8px}
 .sub{font-size:16px;color:var(--ink);opacity:.65;max-width:520px;line-height:1.65}
 .meta-row{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
 .meta-pill{font-size:12px;padding:6px 12px;border-radius:100px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-weight:500}
+
 section{padding:40px 0;border-top:1px solid var(--line);scroll-margin-top:70px}
 .sec-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
 .sec-title{font-family:'Fraunces';font-size:22px;font-weight:600}.sec-num{font-size:12px;color:var(--ink2)}
@@ -55,7 +66,19 @@ section{padding:40px 0;border-top:1px solid var(--line);scroll-margin-top:70px}
 .c-row{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border:1px solid var(--line);background:var(--card);border-radius:12px;font-size:14px;font-weight:500}
 .c-row span:last-child{opacity:.6;font-weight:400}
 footer{padding:32px 0 48px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:12px;color:var(--ink2)}
-@media(max-width:840px){.nav-center{display:none} .top{flex-direction:column;align-items:flex-start}h1{font-size:34px}.avatar,.fallback{width:112px;height:112px}.skills{grid-template-columns:1fr}.edu{flex-direction:column}}
+
+@media(max-width:900px){
+.nav-center{display:none}
+.menu-btn{display:grid}
+.hero{flex-direction:column;align-items:flex-start}
+.hero-right{order:-1}
+.avatar,.fallback{width:128px;height:128px}
+h1{font-size:34px}
+.skills{grid-template-columns:1fr}
+.edu{flex-direction:column}
+.wrap{max-width:720px}
+.nav-inner{max-width:720px}
+}
 </style>
 </head>
 <body>
@@ -63,6 +86,7 @@ footer{padding:32px 0 48px;border-top:1px solid var(--line);display:flex;justify
 <div class="nav-inner">
   <div class="logo"><div class="nd">ND</div><div class="logo-text">Nithin Dharmapuri</div></div>
   <div class="nav-center">
+    <a href="#about">About</a>
     <a href="#education">Education</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
@@ -72,24 +96,38 @@ footer{padding:32px 0 48px;border-top:1px solid var(--line);display:flex;justify
   <div class="nav-right">
     <button class="theme" id="themeBtn">☽</button>
     <a class="resume-btn" href="https://drive.google.com/file/d/11U5Sd3GwPlh9oG2z4Hi0I-R3WT_Vu3xS/view?usp=drive_link" target="_blank">Resume ↗</a>
+    <button class="menu-btn" id="menuBtn">☰</button>
   </div>
 </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#education" onclick="closeMenu()">Education</a>
+  <a href="#skills" onclick="closeMenu()">Skills</a>
+  <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#cert" onclick="closeMenu()">Certifications</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
 <div class="wrap">
 <header id="about">
-  <div class="top">
-    <img src="profile.png" class="avatar" id="avatar" onerror="this.style.display='none';document.getElementById('fb').style.display='grid'">
-    <div class="fallback" id="fb">N</div>
-    <div>
+  <div class="hero">
+    <div class="hero-left">
       <div class="eyebrow">Open to Work • Hyderabad</div>
       <h1>Data Analyst <em>Turning Data into clear Business decisions</em></h1>
+      <p class="sub">Final year B.Tech Data Science at DRKIST, JNTUH. I work with Python, SQL, Power BI and Tableau to clean, analyze and visualize data for business impact.</p>
+      <div class="meta-row"><span class="meta-pill">SQL • Python</span><span class="meta-pill">Power BI • Tableau</span><span class="meta-pill">CGPA 8.05 / 10</span></div>
+    </div>
+    <div class="hero-right">
+      <img src="profile.png" class="avatar" id="avatar" onerror="this.style.display='none';document.getElementById('fb').style.display='grid'">
+      <div class="fallback" id="fb">N</div>
     </div>
   </div>
-  <p class="sub">Final year B.Tech Data Science at DRKIST, JNTUH. I work with Python, SQL, Power BI and Tableau to clean, analyze and visualize data for business impact.</p>
-  <div class="meta-row"><span class="meta-pill">SQL • Python</span><span class="meta-pill">Power BI • Tableau</span><span class="meta-pill">CGPA 8.05 / 10</span></div>
 </header>
+
 <section id="education"><div class="sec-head"><div class="sec-title">Education</div><div class="sec-num">01</div></div>
 <div class="edu"><div><small>2023 - 2027</small><h3>B.Tech in Data Science</h3><p>DRK Institute of Science and Technology, JNTUH, Hyderabad</p></div><div class="cgpa">CGPA 8.05</div></div></section>
+
 <section id="skills"><div class="sec-head"><div class="sec-title">Skills</div><div class="sec-num">02</div></div>
 <div class="skills">
 <div class="skill-box"><h4>Data Analysis</h4><div class="skill-list"><span>SQL</span><span>Python</span><span>Pandas</span><span>Excel</span><span>EDA</span></div></div>
@@ -97,14 +135,17 @@ footer{padding:32px 0 48px;border-top:1px solid var(--line);display:flex;justify
 <div class="skill-box"><h4>Tools</h4><div class="skill-list"><span>MySQL</span><span>Git / GitHub</span><span>VS Code</span></div></div>
 <div class="skill-box"><h4>Fundamentals</h4><div class="skill-list"><span>Statistics</span><span>Scikit-learn</span><span>AWS Basics</span></div></div>
 </div></section>
+
 <section id="projects"><div class="sec-head"><div class="sec-title">Projects</div><div class="sec-num">03</div></div>
 <div class="projects">
 <a class="proj" href="https://smart-trip-planner-qta3.onrender.com" target="_blank"><div><h3>Smart Trip Planner</h3><p>Travel dataset analysis to simplify route & cost estimation.</p><div class="tags"><span>Python</span><span>Flask</span></div></div><div class="arrow">↗</div></a>
 <a class="proj" href="https://darmapurinithin-max.github.io/StudySmart/" target="_blank"><div><h3>Study Smart</h3><p>Dashboard to track study KPIs built with React + MySQL.</p><div class="tags"><span>React</span><span>MySQL</span></div></div><div class="arrow">↗</div></a>
 <a class="proj" href="https://github.com/darmapurinithin-max" target="_blank"><div><h3>Price Comparison</h3><p>Price intelligence with Pandas, cleaning and trend analysis.</p><div class="tags"><span>Python</span><span>Web Scraping</span></div></div><div class="arrow">↗</div></a>
 </div></section>
+
 <section id="cert"><div class="sec-head"><div class="sec-title">Certification</div><div class="sec-num">04</div></div>
 <div class="cert"><div class="cert-logo">D</div><div><h3>Deloitte - Data Analytics Job Simulation</h3><small>Deloitte Australia • Forage • 2026 • <a href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_6ab4bd7566e2527b810871e9_1790239205064_completion_certificate.pdf" target="_blank" style="text-decoration:underline">View Certificate ↗</a></small><ul><li>Created Tableau dashboard for business insights</li><li>Classified data using Excel</li></ul></div></div></section>
+
 <section id="contact"><div class="sec-head"><div class="sec-title">Contact</div><div class="sec-num">05</div></div>
 <div class="contact">
 <a class="c-row" href="tel:+919704884140"><span>Phone</span><span>+91 97048 84140 ↗</span></a>
@@ -115,6 +156,7 @@ footer{padding:32px 0 48px;border-top:1px solid var(--line);display:flex;justify
 </div></section>
 <footer><span>© 2026 Nithin Dharmapuri</span><span>Data Analyst</span></footer>
 </div>
+
 <script>
 const btn=document.getElementById('themeBtn');
 const saved=localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -127,6 +169,10 @@ btn.onclick=()=>{
   localStorage.setItem('theme',next);
   btn.textContent=next==='dark'?'🔆':'☽';
 }
+const menuBtn=document.getElementById('menuBtn');
+const mobileMenu=document.getElementById('mobileMenu');
+menuBtn.onclick=()=>{mobileMenu.classList.toggle('open'); menuBtn.textContent=mobileMenu.classList.contains('open')?'✕':'☰';}
+function closeMenu(){mobileMenu.classList.remove('open'); menuBtn.textContent='☰';}
 </script>
 </body>
 </html>

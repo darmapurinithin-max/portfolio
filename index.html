@@ -18,20 +18,22 @@ nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 90%,
 .nav-center{display:flex;gap:20px;align-items:center}
 .nav-center a{font-size:13px;font-weight:500;color:var(--ink2);transition:.15s}
 .nav-center a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.theme,.menu-btn{width:36px;height:36px;border:1px solid var(--line);border-radius:100px;background:var(--card);display:grid;place-items:center;cursor:pointer;font-size:16px}
-.menu-btn{display:none}
-.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:49;display:none}
+.nav-right{display:flex;align-items:center;gap:18px;flex-shrink:0}
+.theme{width:32px;height:32px;border:none;background:transparent;display:grid;place-items:center;cursor:pointer;color:var(--ink)}
+.menu-btn{width:32px;height:32px;border:none;background:transparent;display:none;place-items:center;cursor:pointer;color:var(--ink)}
+.theme svg,.menu-btn svg{width:22px;height:22px;stroke-width:1.7}
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:49;display:none}
 .mobile-overlay.open{display:block}
-.mobile-menu{position:fixed;top:0;right:-100%;width:280px;height:100%;background:var(--bg);border-left:1px solid var(--line);padding:72px 24px 24px;display:flex;flex-direction:column;gap:6px;z-index:50;transition:right .3s ease}
+.mobile-menu{position:fixed;top:0;right:-100%;width:300px;height:100%;background:#6E6E6E;padding:28px 28px 24px;display:flex;flex-direction:column;gap:2px;z-index:60;transition:right .32s cubic-bezier(.4,0,.2,1)}
 .mobile-menu.open{right:0}
-.mobile-menu a{font-size:15px;font-weight:500;padding:14px 0;border-bottom:1px solid var(--line)}
-.mobile-menu a:last-child{border:none}
+.menu-close{align-self:flex-end;background:transparent;border:none;color:#fff;font-size:26px;cursor:pointer;margin-bottom:36px;line-height:1}
+.mobile-menu a{font-size:16px;font-weight:400;padding:13px 0;color:#fff;opacity:.95;letter-spacing:.01em}
+.mobile-menu a:hover{opacity:1}
 .hero{display:flex;justify-content:space-between;align-items:center;gap:48px}
 .hero-left{flex:1}
 .hero-right{flex-shrink:0}
-.avatar{width:220px;height:220px;border-radius:50%;object-fit:cover;border:1px solid var(--line);background:var(--bg-soft);display:block}
-.fallback{width:220px;height:220px;border-radius:50%;display:none;place-items:center;background:var(--ink);color:var(--bg);font-family:'Fraunces';font-weight:600;font-size:56px}
+.avatar{width:320px;height:320px;border-radius:50%;object-fit:cover;border:1px solid var(--line);background:var(--bg-soft);display:block}
+.fallback{width:320px;height:320px;border-radius:50%;display:none;place-items:center;background:var(--ink);color:var(--bg);font-family:'Fraunces';font-weight:600;font-size:56px}
 .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);font-weight:600}
 h1{font-family:'Fraunces';font-size:48px;line-height:.92;letter-spacing:-.04em;font-weight:600;margin:14px 0 12px;color:var(--ink)}
 h1 em{font-style:normal;color:var(--ink2);font-weight:500;font-size:26px;display:block;margin-top:8px}
@@ -67,10 +69,7 @@ section{padding:40px 0;border-top:1px solid var(--line);scroll-margin-top:70px}
 .c-row span:last-child{opacity:.6;font-weight:400}
 footer{padding:32px 0 48px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink2)}
 .back-top{font-size:12px;font-weight:600;padding:8px 14px;border-radius:100px;border:1px solid var(--line);background:var(--card);cursor:pointer}
-
-/* DESKTOP - space fix */
 header{padding:80px 0 32px}
-
 @media(max-width:900px){
 .nav-center{display:none}
 .menu-btn{display:grid}
@@ -78,7 +77,7 @@ header{padding:36px 0 28px}
 .hero{flex-direction:column;align-items:center;gap:28px;text-align:center}
 .hero-left{width:100%}
 .hero-right{order:-1;width:100%;display:grid;place-items:center}
-.avatar,.fallback{width:280px;height:280px;border-radius:50%}
+.avatar,.fallback{width:320px;height:320px;border-radius:50%}
 .eyebrow{text-align:center}
 h1{font-size:32px;text-align:center}
 h1 em{font-size:22px}
@@ -105,19 +104,25 @@ h1 em{font-size:22px}
     <a href="#contact">Contact</a>
   </div>
   <div class="nav-right">
-    <button class="theme" id="themeBtn">☽</button>
-    <button class="menu-btn" id="menuBtn">☰</button>
+    <button class="theme" id="themeBtn">
+      <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg id="icon-sun" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+    <button class="menu-btn" id="menuBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="14" y2="17"/></svg>
+    </button>
   </div>
 </div>
 </nav>
 <div class="mobile-overlay" id="overlay" onclick="closeMenu()"></div>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#education" onclick="closeMenu()">Education</a>
+  <button class="menu-close" onclick="closeMenu()">✕</button>
+  <a href="#about" onclick="closeMenu()">Home</a>
+  <a href="#education" onclick="closeMenu()">About</a>
   <a href="#skills" onclick="closeMenu()">Skills</a>
-  <a href="#projects" onclick="closeMenu()">Projects</a>
-  <a href="#cert" onclick="closeMenu()">Certifications</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="#projects" onclick="closeMenu()">My Work</a>
+  <a href="#cert" onclick="closeMenu()">Projects</a>
+  <a href="#contact" onclick="closeMenu()">Contact Me</a>
 </div>
 <div class="wrap">
 <header id="about">
@@ -166,16 +171,19 @@ h1 em{font-size:22px}
 <footer><span>© 2026 Nithin Dharmapuri • Data Analyst</span><button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button></footer>
 </div>
 <script>
-const btn=document.getElementById('themeBtn');
+const themeBtn=document.getElementById('themeBtn');
+const moon=document.getElementById('icon-moon');
+const sun=document.getElementById('icon-sun');
 const saved=localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 document.documentElement.setAttribute('data-theme',saved);
-btn.textContent=saved==='dark'?'🔆':'☽';
-btn.onclick=()=>{
+function updateIcon(t){ if(t==='dark'){moon.style.display='none';sun.style.display='block'} else {moon.style.display='block';sun.style.display='none'} }
+updateIcon(saved);
+themeBtn.onclick=()=>{
   const cur=document.documentElement.getAttribute('data-theme');
   const next=cur==='dark'?'light':'dark';
   document.documentElement.setAttribute('data-theme',next);
   localStorage.setItem('theme',next);
-  btn.textContent=next==='dark'?'🔆':'☽';
+  updateIcon(next);
 }
 const menuBtn=document.getElementById('menuBtn');
 const mobileMenu=document.getElementById('mobileMenu');
@@ -183,12 +191,10 @@ const overlay=document.getElementById('overlay');
 menuBtn.onclick=()=>{
   const open=mobileMenu.classList.toggle('open');
   overlay.classList.toggle('open',open);
-  menuBtn.textContent=open?'✕':'☰';
 }
 function closeMenu(){
   mobileMenu.classList.remove('open');
   overlay.classList.remove('open');
-  menuBtn.textContent='☰';
 }
 </script>
 </body>
